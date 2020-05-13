@@ -58,7 +58,7 @@ class App extends Component {
      }
   return (
     <div className={classes.container}>
-    <ParticlesBg type="circle" color="#ADD8E6" num={5} config={config} bg={true}/>  
+    <ParticlesBg type="circle" color="#ADD8E6" num={8} config={config} bg={true}/>  
     <img className={classes.image} src={image}  alt="COVID-19"/>
     {
     this.state.isIndia ?
