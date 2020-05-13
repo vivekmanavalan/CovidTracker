@@ -60,11 +60,19 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
       ) : null
     );
   
+    if(country.length>2){
     return (
-      
       <div className={styles.container}>
-        {country ? barChart : lineChart}
+        {barChart}
       </div>
     );
+    }
+    else{
+      return (
+        <div className={styles.container}>
+          {lineChart}
+        </div>
+      );
+    }
   };
 export default Chart;
