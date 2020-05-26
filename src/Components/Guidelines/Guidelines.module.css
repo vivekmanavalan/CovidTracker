@@ -1,0 +1,9 @@
+.name {
+    text-align: center;
+    color: black;
+}
+
+.divlines {
+    background-color: rgb(123, 185, 247);
+    border: 2px solid black;
+}

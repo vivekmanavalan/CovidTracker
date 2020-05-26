@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {fetchStatesData} from '../Api';
-import { Line, Bar } from 'react-chartjs-2';
-import styles from './Chart.module.css';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+import classes from './Chart.module.css';
  
 const StateChart = (props) => {
   
@@ -27,7 +26,7 @@ const StateChart = (props) => {
     );
   
     return(
-        <div>
+        <div className={classes.container}>
             {barChart}
         </div>
     )
