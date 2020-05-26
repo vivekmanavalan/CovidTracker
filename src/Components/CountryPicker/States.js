@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {FormControl, NativeSelect, Select, MenuItem, InputLabel} from '@material-ui/core';
 import {fetchIndianStates} from '../Api';
-import './Country.module.css';
+import styles from './State.module.css';
 
 const FetchStates  = ({ handleStateChange, districtData, handleDistrictChange }) => {
+    console.log("dtData",districtData);
     const [states, setstates] = useState([]);
 
     useEffect (() =>{
@@ -14,8 +15,8 @@ const FetchStates  = ({ handleStateChange, districtData, handleDistrictChange })
         fetchData();
     },[]);
     return(
-        <div className="formControl">
-             
+        <div className={styles.container}>
+             <div className={styles.formControl}>
                 {/* <NativeSelect defaultValue="" onChange={(e)=>handleStateChange(e.target.value)}>
                     <option value="All States">All States</option>
                     {states.map((state,i)=>
@@ -31,9 +32,11 @@ const FetchStates  = ({ handleStateChange, districtData, handleDistrictChange })
                       <MenuItem key={i} value={i}>{state}</MenuItem>
                     )}
 
-                </Select>&nbsp;
+                </Select>
+                </div>&nbsp;
 
                 &nbsp;&nbsp;
+                <div className={styles.formControl}>
                 <Select defaultValue="All Districts" onChange={(e)=> handleDistrictChange(e.target.value)}>
                     <MenuItem value="All Districts">All Districts</MenuItem>
                     {districtData.map((district) =>
@@ -52,6 +55,7 @@ const FetchStates  = ({ handleStateChange, districtData, handleDistrictChange })
                         )}
 
                 </NativeSelect> */}
+                </div>
         </div>
     );
 

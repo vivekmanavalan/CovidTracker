@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {FormControl, NativeSelect} from '@material-ui/core';
 import {fetchCountries}  from '../Api';
-import './Country.module.css';
+import classes from './Country.module.css';
+
 
 const Country = ({handleCountryChange,handleStateChange}) => {
 const [country, setcountry] = useState([]);
@@ -15,9 +16,9 @@ useEffect (() => {
 },[]);
 
     return(
-      <div>
+      <div className={classes.container}>
       Select India for states data <br></br><br></br>
-      <FormControl className="formControl">
+      <FormControl className={classes.formControl}>
         
         <NativeSelect defaultValue="" onChange={(e)=> handleCountryChange(e.target.value)}>
             <option value="">Global</option>

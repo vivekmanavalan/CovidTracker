@@ -1,0 +1,17 @@
+.slide_container {
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.slide_content {
+    margin:auto;
+    display: flex;
+    width:60%;
+    height:550px;
+    border: 2px solid black;
+}
+
+.slide_content img {
+    width: 100%;
+}
