@@ -1,8 +1,6 @@
 import React from 'react';
 import Tribute from '../Images/tribute.mp4';
-import GuidelineVideo from '../Images/guidelines.mp4';
 import classes from './Guidelines.module.css';
-
 const guideLines = (props) => {
     return(
         <div>
