@@ -31,7 +31,7 @@ class Home extends Component {
   handleCountryChange = async (country) => {
     const data = await fetchCardData(country, this.state.index );
     if(country=="India"){
-      this.setState({ data, country: country, isIndia: true, stateName:'' });
+      this.setState({ data, country: country, isIndia: true, stateName:'', districtData: [] });
     }
     else{
     this.setState({ data:data.data, country: country, isIndia: false, stateName:'', districtData: [] });
@@ -39,13 +39,23 @@ class Home extends Component {
   }
 
   handleStateChange = async (index) => {
+    if(index=="All States"){
+        this.handleCountryChange("India");
+    }
+    else{
     const data = await fetchStatesData(index);
     this.setState({ data, districtData: data.districtData, index: index, isState: true, stateName: data.state_name});
+    }
   }
 
   handleDistrictChange = async (districtName) => {
+    if(districtName== "All Districts"){
+      this.handleStateChange(this.state.index);
+    }
+    else{
     const data = await fetchDistrictData(this.state.stateName,districtName);
     this.setState({data})
+    }
   }
 
   render(){  

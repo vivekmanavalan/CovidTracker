@@ -91,7 +91,7 @@ export const fetchDistricts = async (stateName) => {
          stateName="Dadra and Nagar Haveli and Daman and Diu";
      }
      const  { data }  = await axios.get("https://api.covid19india.org/state_district_wise.json");
-     console.log("statename fetchdistricts", stateName);
+     console.log("statename", stateName);
      console.log("fetchdistrict data", data[stateName]);
      return Object.keys(data[stateName].districtData);
     } catch (error) {
@@ -102,8 +102,12 @@ export const fetchDistricts = async (stateName) => {
 //Fetching data for each districts
 export const fetchDistrictData = async (stateName, districtName) => {
     try {
+        if(stateName=="Dadar Nagar Haveli"){
+            stateName="Dadra and Nagar Haveli and Daman and Diu";
+        }
         const { data } = await axios.get("https://api.covid19india.org/state_district_wise.json");
         console.log("dtName",districtName);
+        console.log("dtdata",data[stateName].districtData[districtName]);
         const modifiedData = {
             confirmed: data[stateName].districtData[districtName].active,
             recovered: data[stateName].districtData[districtName].recovered,
