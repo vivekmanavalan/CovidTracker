@@ -90,6 +90,9 @@ export const fetchDistricts = async (stateName) => {
      if(stateName=="Dadar Nagar Haveli"){
          stateName="Dadra and Nagar Haveli and Daman and Diu";
      }
+     if(stateName=="Telengana"){
+         stateName="Telangana";
+     }
      const  { data }  = await axios.get("https://api.covid19india.org/state_district_wise.json");
      console.log("statename", stateName);
      console.log("fetchdistrict data", data[stateName]);
@@ -104,6 +107,9 @@ export const fetchDistrictData = async (stateName, districtName) => {
     try {
         if(stateName=="Dadar Nagar Haveli"){
             stateName="Dadra and Nagar Haveli and Daman and Diu";
+        }
+        if(stateName=="Telengana"){
+            stateName="Telangana";
         }
         const { data } = await axios.get("https://api.covid19india.org/state_district_wise.json");
         console.log("dtName",districtName);
